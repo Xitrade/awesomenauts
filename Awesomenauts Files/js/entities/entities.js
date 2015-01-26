@@ -1,4 +1,4 @@
-game.playerEntity = me.Entity.extend({
+game.PlayerEntity = me.Entity.extend({
 	init: function(x, y, settings){
 		this._super(me.Entity, 'init', [x, y, {
 			image: "player",
@@ -15,7 +15,7 @@ game.playerEntity = me.Entity.extend({
 
 	},
 
-	update: function (){
+	update: function(delta){
 		if(me.input.isKeyPressed("right")){
 			//sets position of x by adding the velocity difined above in "setVelocity"
 			this.body.vel.x += this.body.accel.x = me.timer.tick;
