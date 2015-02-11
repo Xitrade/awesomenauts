@@ -33,18 +33,18 @@ game.PlayerEntity = me.Entity.extend({
 			//sets position of x by adding the velocity difined above in "setVelocity"
 			this.body.vel.x += this.body.accel.x * me.timer.tick;
 			this.facing = "right";
-			this.flipX(false);
+			this.flipX(true);
 		}else if(me.input.isKeyPressed("left")){
 			this.facing = "left";
 			this.body.vel.x -= this.body.accel.x * me.timer.tick;
-			this.flipX(true);
+			this.flipX(false);
 		}else{
 			this.body.vel.x = 0;
 		}
 
 
-		if(me.input.isKeyPressed("jump") && !this.jumping && !this.body.falling){
-			this.jumping = true;
+		if(me.input.isKeyPressed("jump") && !this.body.jumping && !this.body.falling){
+			this.body.jumping = true;
 			this.body.vel.y -= this.body.accel.y * me.timer.tick;
 		}
 
@@ -53,7 +53,7 @@ game.PlayerEntity = me.Entity.extend({
 			if(!this.renderable.isCurrentAnimation("attack")){
 				//sets current animation to attack
 				//then returns to idle
-				this.renderable.isCurrentAnimation("attack", "idle");
+				this.renderable.setCurrentAnimation("attack", "idle");
 				//the next time we start this sequence
 				//we begin from the first animation, not where we left off
 				//when we switched to another animation
