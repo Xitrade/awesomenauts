@@ -17,6 +17,7 @@ game.PlayerEntity = me.Entity.extend({
 		this.facing = "right";
 		this.now = new Date().getTime();
 		this.lastHit = this.now;
+		this.dead = false;
 		this.lastAttack = new Date().getTime();
 		me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
 
@@ -30,6 +31,11 @@ game.PlayerEntity = me.Entity.extend({
 
 	update: function(delta){
 		this.now = new Date().getTime();
+
+		if (this.health <= 0){
+			this.dead = true;
+		}
+
 		if(me.input.isKeyPressed("right")){
 			//sets position of x by adding the velocity difined above in "setVelocity"
 			this.body.vel.x += this.body.accel.x * me.timer.tick;
@@ -317,6 +323,11 @@ game.GameManager = Object.extend({
 
 	update: function() {
 		this.now = new Date().getTime();
+
+		if(game.data.player.dead){
+			me.game.world.removeChild(game.data.player);
+			me.state.current().resetPlayer(0, 0);
+		}
 
 		if(Math.round(this.now/1000)%10 ===0 && (this.now - this.lastCreep >= 1000)) {
 			this.lastCreep = this.now;
