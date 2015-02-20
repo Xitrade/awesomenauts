@@ -153,7 +153,7 @@ game.PlayerBaseEntity = me.Entity.extend({
 
 		}]);
 		this.broken = false;
-		this.health = playerBaseHealth;
+		this.health = game.data.playerBaseHealth;
 		this.alwaysUpdate = true;
 		this.body.onCollision = this.onCollision.bind(this);
 	
