@@ -13,7 +13,7 @@ var game = {
 		playerAttack: 9000,
 		playerAttackTimer: 1000,
 		enemyCreepAttackTimer: 1000,
-		playerMoveSpeed: 14,
+		playerMoveSpeed: 5,
 		creepMoveSpeed: 20,
 		gameTimerManager: "",
 		heroDethManager: "",

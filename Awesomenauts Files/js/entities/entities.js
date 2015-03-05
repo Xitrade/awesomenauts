@@ -49,7 +49,7 @@ game.PlayerEntity = me.Entity.extend({
 	addAnimation: function(){
 		this.renderable.addAnimation("idle", [117]);
 		this.renderable.addAnimation("walk", [117, 118, 119, 120, 121, 122, 123, 124, 125], 80);
-		this.renderable.addAnimation("attack", [65, 66, 67, 68, 69, 70, 71, 72], 50);
+		this.renderable.addAnimation("attack", [65, 66, 67, 68, 69, 70, 71, 72], 20);
 											//animation for archer
 											//221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233
 											//animation for spear person
