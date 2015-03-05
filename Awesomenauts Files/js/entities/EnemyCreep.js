@@ -30,6 +30,7 @@ game.EnemyCreep = me.Entity.extend({
 
 	loseHealth: function(damage){
 		this.health = this.health - damage;
+		console.log(this.health);
 	},
 
 
@@ -65,10 +66,10 @@ game.EnemyCreep = me.Entity.extend({
 			var xdif = this.pos.x - response.b.pos.x;
 
 			this.attacking=true;
-			this.lastAttacking=this.now;
+			//this.lastAttacking=this.now;
 
 			if(xdif>0){
-				this.pos.x = this.pos.x + 1;
+				//this.pos.x = this.pos.x + 1;
 				this.body.vel.x = 0;
 			}
 			if((this.now-this.lastHit >= 1000) && xdif>0){
