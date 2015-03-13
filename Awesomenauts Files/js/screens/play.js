@@ -19,6 +19,15 @@ game.PlayScreen = me.ScreenObject.extend({
 		var experienceManager = me.pool.pull("ExperienceManager", 0, 0, {});
 		me.game.world.addChild(experienceManager, 0);
 
+		var spendGold = me.pool.pull("SpendGold", 0, 0, {});
+		me.game.world.addChild(spendGold, 0);
+		//button to buy the things
+		me.input.bindKey(me.input.KEY.B, "buy");
+		//buttons to become a wizard (use skills)
+		me.input.bindKey(me.input.KEY.A, "skill1");
+		me.input.bindKey(me.input.KEY.S, "skill2");
+		me.input.bindKey(me.input.KEY.D, "skill3");
+
 		me.input.bindKey(me.input.KEY.RIGHT, "right");
 		me.input.bindKey(me.input.KEY.LEFT, "left");
 		me.input.bindKey(me.input.KEY.UP, "jump");

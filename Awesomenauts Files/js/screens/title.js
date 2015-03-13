@@ -1,7 +1,7 @@
-game.TitleScreen = me.ScreenObject.extend({
-	/**	
-	 *  action to perform on state change
-	 */
+game.TitleScreen = me.ScreenObject.extend({	
+	   
+	//action to perform on state change
+
 	onResetEvent: function() {	
 		me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title-screen')), -10); // TODO
 		me.audio.playTrack("title");
@@ -16,6 +16,7 @@ game.TitleScreen = me.ScreenObject.extend({
 			},
 
 			draw: function(renderer){
+				this.font.draw(renderer.getContext(), "Warriors of Java", 400, 130);
 				this.font.draw(renderer.getContext(), "Begin New Conquest", this.pos.x, this.pos.y);
 			},
 
@@ -30,6 +31,7 @@ game.TitleScreen = me.ScreenObject.extend({
 				me.save.remove('exp2');
 				me.save.remove('exp3');
 				me.save.remove('exp4');
+				me.save.add({exp: 0, exp1: 0, exp2: 0, exp3: 0, exp4: 0});
 				me.state.change(me.state.PLAY);
 			}
 		})));
@@ -37,7 +39,7 @@ game.TitleScreen = me.ScreenObject.extend({
 		me.game.world.addChild(new (me.Renderable.extend({
 			init: function() {
 				this._super(me.Renderable, 'init', [380, 340, 250, 50]);
-				this.font = new me.Font("Ariel", 46, "white");
+				this.font = new me.Font("Impact", 46, "black");
 				me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true)
 			},
 
@@ -57,16 +59,14 @@ game.TitleScreen = me.ScreenObject.extend({
 				game.data.exp4 = me.save.exp4;
 				
 				me.input.releasePointerEvent('pointerdown', this);
-				me.state.change(me.state.PLAY);
+				me.state.change(me.state.SPENDEXP);
 			}
 		})));
 
 	},
 	
-	
-	/**	
-	 *  action to perform when leaving this screen (state change)
-	 */
+	//action to perform when leaving this screen (state change)
+
 	onDestroyEvent: function() {
 
 		me.audio.stopTrack("title");
