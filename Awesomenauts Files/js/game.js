@@ -6,28 +6,36 @@ var game = {
 	data : {
 		// score
 		score : 0,
-		enemyBaseHealth: 100,
+		enemyBaseHealth: 10,
 		playerBaseHealth: 100,
 		enemyCreepHealth: 2,
 		playerHealth: 6900,
 		playerAttack: 9000,
 		playerAttackTimer: 1000,
 		enemyCreepAttackTimer: 1000,
-		playerMoveSpeed: 5,
-		creepMoveSpeed: 20,
+		playerMoveSpeed: 15,
+		creepMoveSpeed: 10,
 		gameTimerManager: "",
 		heroDethManager: "",
 		player: "",
 		exp: 0,
 		gold: 0,
+		ability1: 0,
+		ability2: 0,
+		ability3: 0, 
+		skill1: 0,
+		skill2: 0,
+		skill3: 0,
 		exp1: 0,
 		exp2: 0,
 		exp3: 0,
 		exp4: 0,
+		exp5: 0,
+		exp6: 0,
 		win: "",
 		pausePos: "",
-		buyscreen: ""
-
+		buyscreen: "",
+		buytext: ""
 
 	},
 	

@@ -19,7 +19,7 @@ game.EnemyCreep = me.Entity.extend({
 		this.lastAttacking = new Date().getTime();
 		this.lastHit = new Date().getTime();
 		this.now = new Date().getTime();
-		this.body.setVelocity(3, 20);
+		this.body.setVelocity(game.data.creepMoveSpeed, 70);
 
 		this.type = "EnemyCreep";
 

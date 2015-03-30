@@ -23,16 +23,13 @@ game.SpendExp = me.ScreenObject.extend({
 			draw: function(renderer){
 				this.font.draw(renderer.getContext(), "Press F1-F4 To Buy, F5 To Skip, F9 To Prestige(Once Available)", this.pos.x, this.pos.y);
 				this.font.draw(renderer.getContext(), "Current Experience: " + game.data.exp.toString(), this.pos.x + 100, this.pos.y + 50);
-				this.font.draw(renderer.getContext(), "F1-'Increase Gold Production: " + game.data.exp1.toString() + " Cost: " + exp1cost, this.pos.x, this.pos.y + 100);
-				this.font.draw(renderer.getContext(), "F2-'Increase Health': ", this.pos.x, this.pos.y + 150);
-				this.font.draw(renderer.getContext(), "F3-'Increase Damage': ", this.pos.x, this.pos.y + 200);
-				this.font.draw(renderer.getContext(), "F4-'Cooldown Reduction': ", this.pos.x, this.pos.y + 250);
+				this.font.draw(renderer.getContext(), "F1-Increase Gold Production: " + game.data.exp1.toString() + " Cost: " + exp1cost, this.pos.x, this.pos.y + 100);
+				this.font.draw(renderer.getContext(), "F2-Increase Health: ", this.pos.x, this.pos.y + 150);
+				this.font.draw(renderer.getContext(), "F3-Increase Damage: ", this.pos.x, this.pos.y + 200);
+				this.font.draw(renderer.getContext(), "F4-Cooldown Reduction: ", this.pos.x, this.pos.y + 250);
 
-			},
-
-			update: function(dt){
-				return true;
 			}
+
 
 		})));
 
