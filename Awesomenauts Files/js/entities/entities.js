@@ -30,6 +30,7 @@ game.PlayerEntity = me.Entity.extend({
 	setPlayerTimers: function(){
 		this.now = new Date().getTime();
 		this.lastHit = this.now;
+		this.lastSpear = this.now;
 		this.lastAttack = new Date().getTime();
 	},
 
@@ -64,6 +65,8 @@ game.PlayerEntity = me.Entity.extend({
 		this.dead = this.checkIfDead();
 
 		this.checkKeyPressesAndMove();
+
+		this.checkAbilityKeys();
 
 		this.setAnimation();
 
@@ -113,6 +116,27 @@ game.PlayerEntity = me.Entity.extend({
 	jump: function(){
 		this.body.jumping = true;
 		this.body.vel.y -= this.body.accel.y * me.timer.tick;
+	},
+
+	checkAbilityKeys: function(){
+		if (me.input.isKeyPressed("skill1")) {
+
+		}
+		else if(me.input.isKeyPressed("skill2")){
+
+		}
+		else if(me.input.isKeyPressed("skill3")){
+			this.throwSpear();
+		}
+	},
+
+	throwSpear: function(){
+		//remove the 1000 to shoot like a wizard
+		if((this.now-this.lastSpear) >= game.data.spearTimer*1000 && game.data.ability3 > 0){
+			this.lastSpear = this.now;
+			var spear = me.pool.pull("spear", this.pos.x, this.pos.y, {}, this.facing);
+			me.game.world.addChild(spear, 10);
+		}		
 	},
 
 	setAnimation: function(){

@@ -1,0 +1,15 @@
+#ground{
+	background-color: grey;
+}
+/*For IPhone*/
+@media (max-width: 320px){
+	html { 
+		background-color: blue; 
+	}
+}
+@media (min-width: 1024px){
+	html{
+		background-color: black;
+	}
+}
+/*For IPad*/
