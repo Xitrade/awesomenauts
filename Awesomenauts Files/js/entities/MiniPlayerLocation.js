@@ -22,7 +22,7 @@ game.MiniPlayerLocation = me.Entity.extend({
 		ctx.stroke();
 
 		var my = this;
-		this._super(mme.Entity, "init", [x, y, {
+		this._super(me.Entity, "init", [x, y, {
 			width: 14,
 			height: 14,
 			spritewidth: "14",

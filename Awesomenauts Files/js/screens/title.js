@@ -28,9 +28,9 @@ game.TitleScreen = me.ScreenObject.extend({
 				//why am i mising code?
 				me.state.change(me.state.NEW);
 			}
-		})));
+		}));
 
-		me.game.world.addChild(game.data.option);
+		me.game.world.addChild(game.data.option1);
 
 		game.data.option2 = new (me.Renderable.extend({
 			init: function() {

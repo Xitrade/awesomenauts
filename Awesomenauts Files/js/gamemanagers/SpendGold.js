@@ -150,5 +150,6 @@ game.SpendGold = Object.extend({
 			game.data.gold -= ((game.data.exp6 + 1)* 10);
 			game.data.exp6 += 1;
 		}
+	}
 
 });
